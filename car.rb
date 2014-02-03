@@ -2,6 +2,7 @@
 class Car
 
   def initialize
+    # Use 10.0 (float) so when dividing in drive method you get accurate result
     @fuel = 10.0
     @distance = 0
     puts "The initialize method is running automatically"
@@ -9,8 +10,8 @@ class Car
 
   def drive(miles) 
     @distance = miles
-    if (@fuel -= miles/20.0) <= 0  
-      @fuel = 0 
+    if (@fuel -= miles/20.0) <= 0  # use 20.0 (float) 
+      @fuel = 0 # sets @fuel to 0 if result from above is less than 0 so fueld_up method works
       "you are out of gas and need to fill up"
     else
       @fuel
