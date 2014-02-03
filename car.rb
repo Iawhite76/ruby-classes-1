@@ -9,7 +9,12 @@ class Car
 
   def drive(miles) 
     @distance = miles
-    (@fuel -= miles/20.0) <= 0 ? "You are out of gas and need to fill up" : @fuel 
+    if (@fuel -= miles/20.0) <= 0  
+      @fuel = 0 
+      "you are out of gas and need to fill up"
+    else
+      @fuel
+    end
   end 
 
   def get_info
